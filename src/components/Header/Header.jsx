@@ -139,7 +139,7 @@ const Header = () => {
                 {/* <i class="ri-fire-fill"></i> */}
                 <img src={logoImg} className="logoImg" alt="logoImg" />
               </span>
-              AnimalCareDAO
+              AnimalCare
             </h4>
           </div>
 

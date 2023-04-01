@@ -18,7 +18,7 @@ const HeroSection = () => {
               <p>
                 The number of endangered animals is increasing, and the
                 condition of stray animals is getting worse daily. So, we have
-                made a community-driven DAO dApp for the welfare of the animals.
+                made a community-driven dApp for the welfare of the animals.
               </p>
 
               <div className="hero__btns d-flex align-items-center gap-4">
