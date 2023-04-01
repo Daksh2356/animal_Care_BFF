@@ -9,7 +9,7 @@ import { ethers } from "ethers";
 // import { WalletContext } from "../../context/WalletContext";
 import logoImg from "../../assets/images/1.png";
 import { NavLink } from "react-router-dom";
-import swal from "sweetalert";
+import swal from 'sweetalert';
 // import { useStateValue } from "../../StateProvider";
 // import Connect2Phantom from "../ui/Connect2Phantom.tsx";
 
@@ -54,69 +54,59 @@ const Header = () => {
   //   Balance: null,
   // });
 
-  const [currentAccount, setAccount] = useState("");
-  const [balance, setBalance] = useState("");
-  const [walletAddress, setWalletAddress] = useState(null);
+  const [currentAccount,setAccount] = useState('');
+  const [balance,setBalance] = useState('');
+  
 
   const btnhandler = () => {
-    // Asking if phantom is already present or not
-    window.onload = async function (){
-      try {
-        if(window.solana)
-        {
-          const solana = window.solana
-          if (solana.isPhantom)
-          {
-            console.log('Phantom wallet found!')
-            const res = await solana.connect({onlyIftrusted: true})
-            console.log('connected with Public Key:', res.publicKey.toString())
-            setWalletAddress(res.publicKey.toString())
-          }
-        }
-          else{
-            alert('Wallet not found! Get a phantom Wallet')
-        }
+    // Asking if metamask is already present or not
+    if (window.ethereum) {
+        // res[0] for fetching a first wallet
+        window.ethereum.on('connect', () => { console.log("connected")});
       
-      } catch (error) {
-        console.log(error);
-      }
-       
-    console.log("connected");
-    }
-  };
+        window.ethereum
+          .request({ method: "eth_requestAccounts" })
+          .then((res) => accountChangeHandler(res[0]));
+        } else {
+        alert("install metamask extension!!");
+        }
+      };
 
-  // const getbalance = (address) => {
-  //   window.ethereum
-  //     .request({
-  //       method: "eth_getBalance",
-  //       params: [address, "latest"],
-  //     })
-  //     .then((balance) => {
-  //       setBalance(ethers.utils.formatEther(balance));
-  //     });
-  // };
-
-  // const accountChangeHandler = (account) => {
-  //   setAccount(account);
-  //   getbalance(account);
-  // };
-
-  // const disconnectAccount = () => {
-  //   swal({
-  //     title: "Are you sure?",
-  //     text: "You will be logged out of your Metamask wallet",
-  //     icon: "warning",
-  //     buttons: true,
-  //     dangerMode: true,
-  //   }).then((willDelete) => {
-  //     if (willDelete) {
-  //       swal("You have been Logged Out!", {
-  //         icon: "success",
-  //       });
-  //       setAccount("");
-  //     }
-  //   });
-  // };
+      const getbalance = (address) => {
+        window.ethereum
+        .request({
+          method: "eth_getBalance",
+          params: [address, "latest"]
+        })
+        .then((balance) => {
+          setBalance(ethers.utils.formatEther(balance));
+        });
+      };
+      
+      const accountChangeHandler = (account) => {
+        setAccount(account);
+        getbalance(account);
+      };
+    
+    
+    
+      const disconnectAccount = () => {
+        swal({
+          title: "Are you sure?",
+          text: "You will be logged out of your Metamask wallet",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+        })
+        .then((willDelete) => {
+          if (willDelete) {
+            swal("You have been Logged Out!", {
+              icon: "success",
+            });
+            setAccount('');
+          }
+        });
+        }
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
