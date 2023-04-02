@@ -48,24 +48,6 @@ const Home = () => {
   ];
 
   const [responseData, setResponseData] = useState(null);
-  useEffect(() => {
-    const response = fetch(
-      "https://api.pinata.cloud/data/pinList?includeCount=true",
-      {
-        method: "GET",
-        headers: {
-          pinata_api_key: process.env.PINATA-API-KEY,
-          pinata_secret_api_key:process.env. PINATA-SECRET-API-KEY,
-        },
-      }
-    );
-    setResponseData(response);
-    console.log(response);
-  }, []);
-
-  useEffect(() => {
-    console.log(responseData);
-  }, [responseData]);
 
   return (
     <div className="home">
