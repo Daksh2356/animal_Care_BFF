@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Counter from "../components/ui/Counter/Counter";
 
 import HeroSection from "../components/ui/HeroSection/HeroSection";
@@ -14,6 +14,7 @@ import adoptImg from "../assets/images/adopt.jpeg";
 import nftImg from "../assets/images/nft.jpg";
 import donateImg from "../assets/images/donate.jpeg";
 import infoImg from "../assets/images/info.jpeg";
+import { get } from "firebase/database";
 // import Parallax from "../components/ui/Parallax/Parallax.jsx";
 
 const Home = () => {
@@ -47,6 +48,27 @@ const Home = () => {
       target: "/create",
     },
   ];
+
+  const [responseData, setResponseData] = useState(null);
+  useEffect(() => {
+    const response = fetch(
+      "https://api.pinata.cloud/data/pinList?includeCount=false",
+      {
+        method: "GET",
+        headers: {
+          pinata_api_key: "8dfa337d05a3e346e840",
+          pinata_secret_api_key:
+            "f57efff8120c9ab0e5669bbd77327e995c685d703100bf21137b808cf3ed75bb",
+        },
+      }
+    );
+    setResponseData(response);
+    console.log(response);
+  }, []);
+
+  useEffect(() => {
+    console.log(responseData);
+  }, [responseData]);
 
   return (
     <div className="home">
