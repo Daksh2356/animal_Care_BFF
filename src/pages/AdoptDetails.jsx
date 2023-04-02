@@ -29,13 +29,13 @@ const AdoptDetails = () => {
   if (singleFormData === []) {
     setReload(false);
   }
-  useEffect(() => {
-    onValue(ref(db, `/adopt/${id - 1}`), (snapshot) => {
-      const data = snapshot.val();
-      setFormData(data);
-      // console.log(singleFormData);
-    });
-  }, [reload, id, singleFormData]);
+  // useEffect(() => {
+  //   onValue(ref(db, `/adopt/${id - 1}`), (snapshot) => {
+  //     const data = snapshot.val();
+  //     setFormData(data);
+  //     // console.log(singleFormData);
+  //   });
+  // }, [reload, id, singleFormData]);
 
   return (
     <>

@@ -21,13 +21,13 @@ const NftDetails = () => {
   if (singleFormData === []) {
     setReload(false);
   }
-  useEffect(() => {
-    onValue(ref(db, `/nft/${id - 1}`), (snapshot) => {
-      const data = snapshot.val();
-      setFormData(data);
-      // console.log(singleFormData);
-    });
-  }, [reload, id, singleFormData]);
+  // useEffect(() => {
+  //   onValue(ref(db, `/nft/${id - 1}`), (snapshot) => {
+  //     const data = snapshot.val();
+  //     setFormData(data);
+  //     // console.log(singleFormData);
+  //   });
+  // }, [reload, id, singleFormData]);
 
   return (
     <>

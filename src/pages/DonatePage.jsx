@@ -17,13 +17,13 @@ const DonatePage = () => {
   if (formData === []) {
     setReload(false);
   }
-  useEffect(() => {
-    onValue(ref(db, "/nft/"), (snapshot) => {
-      const data = snapshot.val();
-      setFormData(data);
-    });
-    console.log(formData);
-  }, [reload, formData]);
+  // useEffect(() => {
+  //   onValue(ref(db, "/nft/"), (snapshot) => {
+  //     const data = snapshot.val();
+  //     setFormData(data);
+  //   });
+  //   console.log(formData);
+  // }, [reload, formData]);
 
   // const handleSort = (e) => {
   //   const filterValue = e.target.value;
@@ -59,10 +59,10 @@ const DonatePage = () => {
       <section>
         <Container>
           <Row>
-            <Col lg="12" classnameName="mb-5">
-              <div classnameName="market__product__filter d-flex align-items-center justify-content-between">
-                <div classnameName="filter__left d-flex align-items-center gap-5">
-                  <div classnameName="all__category__filter">
+            <Col lg="12" className="mb-5">
+              <div className="market__product__filter d-flex align-items-center justify-content-between">
+                <div className="filter__left d-flex align-items-center gap-5">
+                  <div className="all__category__filter">
                     <select onChange={handleCategory}>
                       <option>All Categories</option>
                       <option value="art">Art</option>
@@ -73,7 +73,7 @@ const DonatePage = () => {
                     </select>
                   </div>
 
-                  <div classnameName="all__items__filter">
+                  <div className="all__items__filter">
                     <select onChange={handleItems}>
                       <option>All Items</option>
                       <option value="single-item">Single Item</option>
@@ -82,7 +82,7 @@ const DonatePage = () => {
                   </div>
                 </div>
 
-                <div classnameName="filter__right">
+                <div className="filter__right">
                   <select>
                     <option>Sort By</option>
                     <option value="high">High Rate</option>
@@ -94,7 +94,7 @@ const DonatePage = () => {
             </Col>
 
             {DonateData?.map((item) => (
-              <Col lg="3" md="4" sm="6" classnameName="mb-4" key={item.id}>
+              <Col lg="3" md="4" sm="6" className="mb-4" key={item.id}>
                 <DonateCard item={item} />
               </Col>
             ))}
