@@ -8,25 +8,25 @@ import "../styles/wallet.css";
 const wallet__data = [
   {
     title: "Bitcoin",
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium accusamus repellat rerum consequatur explicabo? Reiciendis!",
+    desc: "Bitcoin is open-source; its design is public, nobody owns or controls Bitcoin and everyone can take part. Through many of its unique properties, Bitcoin allows exciting uses that could not be covered by any previous payment system.",
     icon: "ri-bit-coin-line",
   },
 
   {
     title: "Coinbase",
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium accusamus repellat rerum consequatur explicabo? Reiciendis!",
+    desc: "Coinbase is a secure online platform for buying, selling, transferring, and storing cryptocurrency (crypto). ",
     icon: "ri-coin-line",
   },
 
   {
     title: "Metamask",
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium accusamus repellat rerum consequatur explicabo? Reiciendis!",
+    desc: "MetaMask is the leading self-custodial wallet. The safe and simple way to access blockchain applications and web3. Trusted by millions of users worldwide.",
     icon: "ri-money-cny-circle-line",
   },
 
   {
     title: "Authereum",
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium accusamus repellat rerum consequatur explicabo? Reiciendis!",
+    desc: "Authereum is an Ethereum-based wallet and dApp login solution. It allows users to easily interact with web 3 applications via any browser, using nothing but a username and password.",
     icon: "ri-bit-coin-line",
   },
 ];
@@ -42,9 +42,13 @@ const Wallet = () => {
               <div className="w-50 m-auto">
                 <h3 className="text-light">Connect your wallet</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Minima numquam nisi, quam obcaecati a provident voluptas sequi
-                  unde officiis placeat!
+                  Blockchain is a shared, immutable ledger that facilitates the
+                  process of recording transactions and tracking assets in a
+                  business network. An asset can be tangible (a house, car,
+                  cash, land) or intangible (intellectual property, patents,
+                  copyrights, branding). Virtually anything of value can be
+                  tracked and traded on a blockchain network, reducing risk and
+                  cutting costs for all involved.
                 </p>
               </div>
             </Col>
