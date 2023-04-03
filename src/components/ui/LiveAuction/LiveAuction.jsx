@@ -15,13 +15,13 @@ const LiveAuction = () => {
   if (formData === []) {
     setReload(false);
   }
-  //  useEffect(() => {
-  //    onValue(ref(db , '/nft/'),(snapshot)=>{
-  //      const data = snapshot.val();
-  //      setFormData(data);
-  //    });
-  //    // console.log(formData);
-  //  }, [reload , formData]);
+   useEffect(() => {
+     onValue(ref(db , '/nft/'),(snapshot)=>{
+       const data = snapshot.val();
+       setFormData(data);
+     });
+     // console.log(formData);
+   }, [reload , formData]);
 
   return (
     <section>

@@ -143,7 +143,7 @@ const Create = () => {
         const formData = new FormData();
         formData.append("file", fileImg);
 
-        console.log(formData);
+        // console.log(formData);
 
         const resFile = await axios({
           method: "post",
@@ -157,7 +157,7 @@ const Create = () => {
         });
 
         const ImgHash = `https://gateway.pinata.cloud/ipfs/${resFile.data.IpfsHash}`;
-        console.log(ImgHash);
+        // console.log(ImgHash);
         e.preventDefault();
 
         const data = new FormData(e.target);

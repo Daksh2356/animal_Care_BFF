@@ -21,12 +21,12 @@ export default function HomeSwiper() {
   if (formData === []) {
     setReload(false);
   }
-  // useEffect(() => {
-  //   onValue(ref(db, "/nft/"), (snapshot) => {
-  //     const data = snapshot.val();
-  //     setFormData(data);
-  //   });
-  // }, [reload]);
+  useEffect(() => {
+    onValue(ref(db, "/nft/"), (snapshot) => {
+      const data = snapshot.val();
+      setFormData(data);
+    });
+  }, [reload]);
 
   return (
     <>

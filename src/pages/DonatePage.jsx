@@ -17,39 +17,39 @@ const DonatePage = () => {
   if (formData === []) {
     setReload(false);
   }
-  // useEffect(() => {
-  //   onValue(ref(db, "/nft/"), (snapshot) => {
-  //     const data = snapshot.val();
-  //     setFormData(data);
-  //   });
-  //   console.log(formData);
-  // }, [reload, formData]);
+  useEffect(() => {
+    onValue(ref(db, "/nft/"), (snapshot) => {
+      const data = snapshot.val();
+      setFormData(data);
+    });
+    // console.log(formData);
+  }, [reload, formData]);
 
-  // const handleSort = (e) => {
-  //   const filterValue = e.target.value;
+  const handleSort = (e) => {
+    const filterValue = e.target.value;
 
-  //   if (filterValue === "high") {
-  //     const filterData = DonateData.filter((item) => item.currentBid >= 6);
+    if (filterValue === "high") {
+      const filterData = DonateData.filter((item) => item.currentBid >= 6);
 
-  //     //setData(filterData);
-  //   }
+      //setData(filterData);
+    }
 
-  //   if (filterValue === "mid") {
-  //     const filterData = DonateData.filter(
-  //       (item) => item.currentBid >= 5.5 && item.currentBid < 6
-  //     );
+    if (filterValue === "mid") {
+      const filterData = DonateData.filter(
+        (item) => item.currentBid >= 5.5 && item.currentBid < 6
+      );
 
-  //     setData(filterData);
-  //   }
+      setData(filterData);
+    }
 
-  //   if (filterValue === "low") {
-  //     const filterData = DonateData.filter(
-  //       (item) => item.currentBid >= 4.89 && item.currentBid < 5.5
-  //     );
+    if (filterValue === "low") {
+      const filterData = DonateData.filter(
+        (item) => item.currentBid >= 4.89 && item.currentBid < 5.5
+      );
 
-  //     setData(filterData);
-  //   }
-  // };
+      setData(filterData);
+    }
+  };
   return (
     <>
       <CommonSection
